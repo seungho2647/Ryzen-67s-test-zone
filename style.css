@@ -1,0 +1,563 @@
+/* =========================
+   기본 설정
+========================= */
+
+:root {
+    --navy: #101B30;
+    --navy-light: #1B2940;
+    --orange: #E87524;
+    --white: #FFFFFF;
+    --gray: #AAB5C5;
+    --border: #35445C;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--navy);
+    font-family: Arial, sans-serif;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* =========================
+   상단 헤더
+========================= */
+
+#topBar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+}
+
+#title {
+    width: 150px;
+    height: 75px;
+    object-fit: contain;
+    margin: 0 30px;
+}
+
+#loginBtn {
+    margin: 2%;
+    margin-left: auto;
+    height: 45px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#loginBtn:hover {
+    background-color: #FF9147;
+}
+
+/* =========================
+   로그인 다이얼로그
+========================= */
+
+#loginDialog {
+    width: 350px;
+    height: 500px;
+    background-color: var(--navy-light);
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+#loginDialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#loginDialog내용 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 95%;
+    gap: 5px;
+}
+
+#login나가기 {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 3px;
+}
+
+#회원가입span {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+#회원가입span:hover {
+    color: #FF9147;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* =========================
+   메인 메뉴
+========================= */
+
+#mainNav {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    background-color: #E5E5E5;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#mainNav a {
+    color: #101B30;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+#mainNav a:hover {
+    color: var(--orange);
+}
+
+/* =========================
+   메인 배너
+========================= */
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+/* 배너 사진 */
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+}
+
+/* 사진 위 그라데이션 제거 */
+
+#hero::after {
+    content: none;
+}
+
+/* 배너 문구 */
+
+#heroText {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    padding: 0;
+}
+
+/* 작은 문구 */
+
+#heroText p {
+    color: #E87524;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* 메인 문구 */
+
+#heroText h1 {
+    color: #000000;
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 900;
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+}
+
+#heroText {
+    left: 8%;
+    width: 45%;
+}
+
+#heroStadium {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38%;
+    z-index: 2;
+}
+
+#heroStadium img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+#heroStadium p {
+    color: #E87524;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 12px 0 5px;
+}
+
+#heroStadium h2 {
+    color: #101B30;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 900;
+}
+
+/* =========================
+   하단 영역 (커뮤니티 / 바로가기)
+========================= */
+
+#bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 7% 80px 8%;
+    background-color: var(--white);
+}
+
+#community h2,
+#shortcuts h2 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* 왼쪽: 커뮤니티 */
+#community ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#community li {
+    padding: 12px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+#community a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#community a:hover {
+    color: var(--orange);
+}
+
+/* 오른쪽: 바로가기 */
+
+#shortcutList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    min-width: 360px;
+}
+
+.shortcutBtn {
+    display: block;
+    padding: 16px 20px;
+    background-color: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.shortcutBtn:hover {
+    background-color: var(--orange);
+}
+
+/* =========================
+   회색 박스 공통
+========================= */
+
+#communityBox,
+#shortcutList {
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+#community {
+    flex: 3;
+}
+
+#shortcuts {
+    flex: 2;
+}
+
+#shortcutList {
+    min-width: 0;
+}
+
+/* =========================
+   커뮤니티 박스 안쪽
+========================= */
+
+#communityBox {
+    display: flex;
+    gap: 24px;
+}
+
+#categoryList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 130px;
+    flex-shrink: 0;
+}
+
+/* 카테고리 버튼 사이 줄 제거 */
+#categoryList li {
+    padding: 0;
+    border-bottom: none;
+}
+
+.catBtn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: var(--white);
+    color: var(--navy);
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.catBtn:hover {
+    border-color: var(--orange);
+}
+
+.catBtn.active {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+#postArea {
+    flex: 1;
+    min-width: 0;
+}
+
+#postList {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    min-height: 120px;
+}
+
+#postList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.postTag {
+    flex-shrink: 0;
+    padding: 2px 8px;
+    background-color: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.postTitle {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.postDate {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #777777;
+}
+
+.emptyPost {
+    color: #777777;
+    justify-content: center;
+}
+
+#postForm {
+    display: flex;
+    gap: 8px;
+}
+
+#postForm input {
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+}
+
+#postForm select,
+#postForm button {
+    padding: 8px 12px;
+}
+
+#postForm button {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    #topBar {
+        height: 70px;
+    }
+
+    #title {
+        width: 110px;
+        height: 55px;
+        margin: 0 15px;
+    }
+
+    #loginBtn {
+        margin: 0 15px 0 auto;
+        height: 38px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    #mainNav {
+        gap: 24px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 20px;
+    }
+
+    #hero {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 30px 6%;
+        gap: 30px;
+    }
+
+    #heroText,
+    #heroStadium {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+
+    #heroText h1 {
+        font-size: 44px;
+    }
+
+    #heroStadium img {
+        height: 200px;
+    }
+
+    #bottomSection {
+        flex-direction: column;
+        padding: 40px 6%;
+        gap: 30px;
+    }
+
+    #community,
+    #shortcuts {
+        flex: none;
+        width: 100%;
+    }
+
+    #communityBox {
+        flex-direction: column;
+    }
+
+    #categoryList {
+        width: 100%;
+        display: flex;
+        gap: 6px;
+    }
+
+    #categoryList li {
+        flex: 1;
+    }
+
+    .catBtn {
+        margin-bottom: 0;
+        padding: 10px 4px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    #postForm {
+        flex-wrap: wrap;
+    }
+
+    #postForm input {
+        flex: 1 1 100%;
+        order: 3;
+    }
+
+    #shortcutList {
+        min-width: 0;
+    }
+
+    #loginDialog {
+        width: 90%;
+    }
+}
